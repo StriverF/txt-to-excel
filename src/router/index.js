@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+// import Home from '../views/Home.vue'
 
 const TextToExcel = () => import(/* webpackChunkName: "tools" */ '../views/TextToExcel')
 const UnitConversion = () => import(/* webpackChunkName: "tools" */ '../views/UnitConversion')
@@ -12,7 +12,8 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    // component: Home
+    redirect: '/text-to-excel'
   },
   {
     path: '/text-to-excel',
