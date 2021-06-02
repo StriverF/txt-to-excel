@@ -2,6 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
+const TextToExcel = () => import(/* webpackChunkName: "tools" */ '../views/TextToExcel')
+const UnitConversion = () => import(/* webpackChunkName: "tools" */ '../views/UnitConversion')
+const TimeConversion = () => import(/* webpackChunkName: "tools" */ '../views/TimeConversion')
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -11,16 +15,24 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/text-to-excel',
+    name: 'TextToExcel',
+    component: TextToExcel
+  },
+  {
+    path: '/unit-conversion',
+    name: 'UnitConversion',
+    component: UnitConversion
+  },
+  {
+    path: '/time-conversion',
+    name: 'TimeConversion',
+    component: TimeConversion
   }
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 
