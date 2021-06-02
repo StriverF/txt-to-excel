@@ -34,14 +34,5 @@
     "lint-staged": "^9.5.0",
     "vue-template-compiler": "^2.6.11",
     "xlsx": "^0.17.0"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,jsx,vue}": [
-      "vue-cli-service lint",
-      "git add"
-    ]
   }
 }
