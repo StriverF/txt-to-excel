@@ -95,11 +95,12 @@ export default {
         historyThyroid: { title: '甲状腺', regs: [/\n(\S*甲状腺\S*)\r/] },
         historyAnemia: { title: '贫血', regs: [/\n(\S*贫血\S*)\r/] },
         historySI: { title: '自身免疫', regs: [/\n(\S*自身免疫\S*)\r/] },
-        DSA_CTA_MRA: { title: 'DSA_CTA_MRA', regs: [/\n(\S*[DSA,CTA,MRA]\S*)\r/] },
+        DSA_CTA_MRA: { title: '脑血管相关检查', regs: [/\n(\S*[DSA,CTA,MRA]\S*)\r/] },
         initialDiagnosis: { title: '初步诊断', regs: [/初步诊断[:,：]([\s\S]*)\n住院医师/] },
         operationName: { title: '手术名称', regs: [/手术名称[:,：](\S*)\r/] },
-        operationDate: { title: '手术时间', regs: [/手术时间[:,：](\S*)\r/] },
-        operationPhysician: { title: '手术医师', regs: [/手术医师[:,：]([\s\S]*)\r/, /手术医师1[:,：]([\s\S]*)\r/] },
+        operationDate: { title: '手术时间', regs: [/手术时间[:,：]开始时间[:,：]([0-9]{4,4}年[0-9]{1,2}月[0-9]{1,2}日)\S*\r/] },
+        operationDuration: { title: '手术时长', regs: [/分共用[:,：](\S*)\r/] },
+        operationPhysician: { title: '手术医师', regs: [/手术医师[:,：](\S*)[，,、,助手,\s+]/, /手术医师1[:,：](\S*)[\s\S]*\r手术时间/] },
         operationResult: { title: '手术结果', regs: [/手术结果[:,：](\S*)\r/] },
         discharged: { title: '出院时间', regs: [/出院时间[:,：](\S*)\r/] }
       }
